@@ -14,9 +14,9 @@
 ## Base settings ##
 # url:  #the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl: /
-title: Someone's blog
+title: 庄永新
 description: > #this means to ignore newlines until "nav_lists:"
-  Someone's Blog
+  庄永新的Blog
 
 nav_lists:
   - titles:
@@ -42,7 +42,7 @@ timezone: Asia/Shanghai #see https://en.wikipedia.org/wiki/List_of_tz_database_t
 
 ## Author & social ##
 author:
-  name: Someone
+  name: 庄永新
   # email:  #your Email address e.g. someone@site.com
   # facebook:  #your Facebook username
   # twitter:  #your Twitter username
