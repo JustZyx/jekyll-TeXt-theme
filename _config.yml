@@ -25,6 +25,10 @@ nav_lists:
       zh-Hans: 关于
       zh-Hant: 關於
     url: /about.html
+  - titles:
+      en: Link
+      zh: 友链
+    url: /friend.html
 
 # paths:
 #   base: /
