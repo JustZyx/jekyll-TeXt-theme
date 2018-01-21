@@ -8,8 +8,12 @@ titles:
 key: page-about
 ---
 
-Just say something about yourself. :+1:
+##  个人简介
+* 90后程序员，江苏科大12级计算机科班
+* 后端开发，常用技术栈LNMP，业余倒腾过C++，Python
+* 来自龙虾之都盱眙小县城，现居魔都
 
-{% highlight javascript %}
-  (() => console.log('hello, world!'))();
-{% endhighlight %}
+## 观点
+* 崇尚编码规范，业务合理分层，反对过度设计
+* 崇尚熟知各门语言的优劣以及应用场景，反对语言莫名优越感
+* 崇尚工程师文化，反对无理由996
