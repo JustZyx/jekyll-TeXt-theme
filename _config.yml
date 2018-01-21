@@ -64,7 +64,7 @@ gitalk:
   clientSecret: cb53f3a1ec5146b867515e38e3b3db767d4d3842 #Github Application Client Secret
   repository: JustZyx.github.io #Github repo
   owner: JustZyx #Github repo owner
-  dmin: [JustZyx] #Github repo owner and collaborators, only these guys can initialize github issues, IT IS A LIST.
+  admin: [JustZyx] #Github repo owner and collaborators, only these guys can initialize github issues, IT IS A LIST.
     # - owner
 
 ## Google Analytics ##
