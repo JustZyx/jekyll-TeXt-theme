@@ -55,16 +55,16 @@ author:
 
 ## Comment system (Disqus) ##
 disqus:
-  shortname: justzyx #the Disqus shortname for the site
+  # shortname: justzyx #the Disqus shortname for the site
 
 ## Comment system (gitalk) ##
 # please refer to https://github.com/gitalk/gitalk for more info.
 gitalk:
-  # clientID:  #Github Application Client ID
-  # clientSecret:  #Github Application Client Secret
-  # repository:  #Github repo
-  # owner:  #Github repo owner
-  # admin: #Github repo owner and collaborators, only these guys can initialize github issues, IT IS A LIST.
+  clientID: f15a56a99338ae33b74a #Github Application Client ID
+  clientSecret: cb53f3a1ec5146b867515e38e3b3db767d4d3842 #Github Application Client Secret
+  repository: JustZyx.github.io #Github repo
+  owner: JustZyx #Github repo owner
+  dmin: [JustZyx] #Github repo owner and collaborators, only these guys can initialize github issues, IT IS A LIST.
     # - owner
 
 ## Google Analytics ##
