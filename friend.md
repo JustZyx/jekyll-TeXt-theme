@@ -1,12 +1,11 @@
 ---
-title: 友链
+titles:
+  en: Lin
+  zh: 友链
+  zh-Hans: 关于
+  zh-Hant: 關於
 key: 10003
-tags: friend
-layout: post
-category: blog
-comment: true
-date: 2018-01-21 17:03:00 +08:00
-modify_date: 2018-01-21 17:03:00 +08:00
+layout: page
 ---
 
 ## 现在比我牛的
