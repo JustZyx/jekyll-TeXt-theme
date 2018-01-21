@@ -74,7 +74,7 @@ gitalk:
 leancloud:
   app_id: d0S4mCC6mtYYE9qBTceXe2hx-gzGzoHsz #LeanCloud App id
   app_key: 23lzW1yIx7BiRD8Q3o7Oh5D5 #LeanCloud App key
-  app_class: JustZyx.github.io #LeanCloud App class
+  app_class: blogViews #LeanCloud App class
 
 # mathjax: true
 
