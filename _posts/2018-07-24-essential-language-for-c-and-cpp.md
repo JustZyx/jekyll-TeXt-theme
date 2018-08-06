@@ -1,5 +1,5 @@
 ---
-title: C／C++ 编译相关必知
+title: C/C++ 编译相关必知
 key: 10004
 tags: 编译
 layout: post
