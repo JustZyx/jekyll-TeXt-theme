@@ -66,7 +66,7 @@ mysql会一直向右匹配直到遇到范围查询(>、<、between、like)就停
 ## 贷上钱业务实例
 先简单介绍一下慢查所涉及的相关表结构
 * 订单表(apply)
-![图片](/assets/images/blog/5f165fd821ba11e88a4b5254004fae61 "图片")
+![图片](../assets/images/blog/5f165fd821ba11e88a4b5254004fae61 "图片")
 * 支付流水表(pay_log)
 ```
 CREATE TABLE `pay_log` (
