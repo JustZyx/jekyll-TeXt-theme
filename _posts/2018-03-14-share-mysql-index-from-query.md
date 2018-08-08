@@ -66,7 +66,7 @@ mysql会一直向右匹配直到遇到范围查询(>、<、between、like)就停
 ## 贷上钱业务实例
 先简单介绍一下慢查所涉及的相关表结构
 * 订单表(apply)
-![图片](../assets/images/blog/5eac724e-21ba-11e8-8af0-5254004fae61.png)
+![图片](/assets/images/blog/5eac724e-21ba-11e8-8af0-5254004fae61.png)
 * 支付流水表(pay_log)
 ```
 CREATE TABLE `pay_log` (
@@ -102,11 +102,11 @@ WHERE (`pay_log_status`=0)
 ```
  1.1 执行时间
  1.2 EXPLAIN (生产环境以优化，以测试环境举例)
- ![图片](../assets/images/blog/969d636e-2734-11e8-9a0d-5254004b6d18.png)
+ ![图片](/assets/images/blog/969d636e-2734-11e8-9a0d-5254004b6d18.png)
  1.3 分析
  如果有细心的同学应该会发现，第一条建议尽可能三个字被我加粗了，本例子就是那条建议的一个例外。按照区分度公式，pay_log_status字段显然是不适合加索引的，明显区分度太低了。但是通过了解业务发现pay_log_status只是一个中间态，业务方每隔几分钟就会从biz异步来更新成1或者2，所以几分钟内的数据量不会太大。而pay_log_type就不一样了，pay_log_type的数据分布较为均匀，加索引也无法锁定特别少量的数据。
- ![图片](../assets/images/blog/436a61a0-2735-11e8-99a6-5254009d059e.png)
- ![图片](../assets/images/blog/67cef10a-2735-11e8-a407-5254009d059e.png)
+ ![图片](/assets/images/blog/436a61a0-2735-11e8-99a6-5254009d059e.png)
+ ![图片](/assets/images/blog/67cef10a-2735-11e8-a407-5254009d059e.png)
 由此，我删除了之前的
 ```
 KEY `pay_log_idx2` (`pay_log_type`,`pay_log_target_id`,`pay_log_status`)
@@ -116,7 +116,7 @@ KEY `pay_log_idx2` (`pay_log_type`,`pay_log_target_id`,`pay_log_status`)
 KEY `pay_log_idx2` (`pay_log_status`,`pay_log_type`)
 ```
 1.4 效果
-![图片](../assets/images/blog/43d76236-2736-11e8-9338-5254009d059e.png)
+![图片](/assets/images/blog/43d76236-2736-11e8-9338-5254009d059e.png)
 
 
 2. offset过大的问题
