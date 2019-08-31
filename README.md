@@ -1,7 +1,11 @@
-# 《深入理解LNMP Web架构》
+# Blog
 
-本书主要做了以下两件事情：
+## Mac下开发环境配置
+```
+git clone https://github.com/JustZyx/JustZyx.github.io.git
+bundle install --path vendor/bundle
+bundle exec jekyll serve
+```
 
-* 记录作者开发过程中的一些技术积累，思考以及收录一些常用的开发资料
-* 作为一名PHP开发人员，仅仅只会增删改查写逻辑是远远不够的，本书尝试着由浅入深，从表面到底层，力求深入浅出
-  的为初入PHP开发的小伙伴们建立LNMP架构运行的整体流程以及如何进行定位问题，进行优化。
+## 参考
+- [jekyll Quick Start](https://jekyllrb.com/docs/)

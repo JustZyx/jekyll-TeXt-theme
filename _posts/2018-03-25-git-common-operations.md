@@ -2,7 +2,7 @@
 title: Git中低频操作
 key: 10003
 tags: Git
-layout: post
+layout: article
 category: blog
 comment: true
 date: 2018-03-25 11:49:00 +08:00

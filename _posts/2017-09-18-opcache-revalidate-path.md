@@ -2,7 +2,7 @@
 title: Opcache踩过的一些小坑
 key: 10006
 tags: opcache
-layout: post
+layout: article
 category: blog
 comment: true
 date: 2017-09-18 16:24:00 +08:00

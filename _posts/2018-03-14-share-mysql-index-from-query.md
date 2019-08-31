@@ -2,7 +2,7 @@
 title: 再谈MySQL索引
 key: 10005
 tags: MySQL
-layout: post
+layout: article
 category: blog
 comment: true
 date: 2018-03-14 10:25:00 +08:00

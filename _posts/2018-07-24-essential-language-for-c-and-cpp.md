@@ -2,7 +2,7 @@
 title: C/C++ 编译相关必知
 key: 10004
 tags: 编译
-layout: post
+layout: article
 category: blog
 comment: true
 date: 2018-07-24 17:34:00 +08:00
