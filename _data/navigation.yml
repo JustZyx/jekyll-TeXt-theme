@@ -9,7 +9,7 @@ header:
       zh      : *ZH_HANS
       zh-CN   : *ZH_HANS
       zh-SG   : *ZH_HANS
-    url: /blog/
+    url: /
 
   - titles:
       en      : &EN       Archive
@@ -26,7 +26,7 @@ header:
       zh-HK   : *ZH_HANT
       ko      : &KO       아카이브
       ko-KR   : *KO
-    url: /blog/archive.html
+    url: /archive.html
 
   - titles:
       en      : &EN       About
@@ -43,7 +43,7 @@ header:
       zh-HK   : *ZH_HANT
       ko      : &KO       소개
       ko-KR   : *KO
-    url: /blog/about.html
+    url: /about.html
 
   - titles:
       en      : &EN       Friend
@@ -55,4 +55,4 @@ header:
       zh      : *ZH_HANS
       zh-CN   : *ZH_HANS
       zh-SG   : *ZH_HANS
-    url: /blog/friend.html
+    url: /friend.html
