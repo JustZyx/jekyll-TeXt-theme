@@ -1,5 +1,5 @@
 ---
-title: C/C++ 编译相关必知
+title: 静态程序构建过程
 key: 10004
 tags: 编译
 layout: article

@@ -14,7 +14,7 @@ modify_date: 2019-10-01 23:48:00 +08:00
 ### 计算机体系结构和内存层次
 
 计算机系统包括CPU、内存、IO设备和总线，如下图：
-![系统结构](../screenshots/cs_structure.png)
+![系统结构](/assets/images/blog/cs_structure.png)
 
 - 地址总线一般是32位(4个字节)，换言之CPU一次读写是4个字节起步
 - 内存是以字节为单位进行访问的，每一个字节有自己的物理地址
