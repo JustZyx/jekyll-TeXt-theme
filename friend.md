@@ -1,6 +1,5 @@
 ---
 layout: article
-title: 友链
 key: page-friend
 ---
 
