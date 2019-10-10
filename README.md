@@ -1,6 +1,6 @@
-# Blog
+# 博客
 
-## Mac下开发环境配置
+## Getting Started
 ```
 git clone https://github.com/JustZyx/JustZyx.github.io.git
 bundle install --path vendor/bundle

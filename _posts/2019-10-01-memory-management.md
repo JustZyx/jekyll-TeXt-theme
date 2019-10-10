@@ -1,6 +1,6 @@
 ---
-title: 白话OS存储管理
-key: 10007
+title: 存储管理
+key: 10009
 tags: 操作系统
 layout: article
 category: blog

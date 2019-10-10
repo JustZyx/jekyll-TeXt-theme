@@ -1,7 +1,7 @@
 ---
 title: Git中低频操作
-key: 10003
-tags: Git
+key: 10005
+tags: 版本控制
 layout: article
 category: blog
 comment: true
@@ -40,3 +40,4 @@ Git高频操作天天用早就烂熟于心了，此文仅仅记录Git中低频�
 
 * git rebase
 
+ 

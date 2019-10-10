@@ -1,6 +1,6 @@
 ---
 title: 再谈MySQL索引
-key: 10005
+key: 10004
 tags: MySQL
 layout: article
 category: blog
@@ -101,7 +101,7 @@ WHERE (`pay_log_status`=0)
 	AND (`pay_log_biz_order_number` != '0');
 ```
  1.1 执行时间
- 1.2 EXPLAIN (生产环境以优化，以测试环境举例)
+ 1.2 EXPLAIN (生产环境已优化，以测试环境举例)
  ![图片](/assets/images/blog/969d636e-2734-11e8-9a0d-5254004b6d18.png)
  1.3 分析
  如果有细心的同学应该会发现，第一条建议尽可能三个字被我加粗了，本例子就是那条建议的一个例外。按照区分度公式，pay_log_status字段显然是不适合加索引的，明显区分度太低了。但是通过了解业务发现pay_log_status只是一个中间态，业务方每隔几分钟就会从biz异步来更新成1或者2，所以几分钟内的数据量不会太大。而pay_log_type就不一样了，pay_log_type的数据分布较为均匀，加索引也无法锁定特别少量的数据。

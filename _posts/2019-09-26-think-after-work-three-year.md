@@ -1,6 +1,6 @@
 ---
 title: 工作三年后的一些思考
-key: 10007
+key: 10008
 tags: 杂感
 layout: article
 category: blog

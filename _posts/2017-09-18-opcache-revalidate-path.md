@@ -1,6 +1,6 @@
 ---
 title: Opcache踩过的一些小坑
-key: 10006
+key: 10002
 tags: opcache
 layout: article
 category: blog
