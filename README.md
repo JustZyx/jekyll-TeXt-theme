@@ -1,5 +1,5 @@
 # justzyx.github.io
-> The website for Resque | http://blog.justzyx.cn
+> The blog for zyx, also a field for technical experiment. | http://blog.justzyx.cn
 
 ## up and running
 ```
