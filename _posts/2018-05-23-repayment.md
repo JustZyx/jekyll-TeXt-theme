@@ -1,6 +1,6 @@
 ---
 title: 支付设计
-key: 10008
+key: 10006
 tags: 系统设计
 layout: article
 category: blog

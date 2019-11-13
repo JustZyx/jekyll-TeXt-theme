@@ -1,6 +1,6 @@
 ---
 title: 合并有序数据结构
-key: 10007
+key: 10008
 tags: 算法
 layout: article
 category: blog

@@ -1,7 +1,7 @@
 ---
 title: 高价值文档&书籍&手册
-key: 10002
-tags: 书籍
+key: 10001
+tags: 文档
 layout: article
 category: blog
 comment: true

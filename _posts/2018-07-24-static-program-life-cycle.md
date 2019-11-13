@@ -1,6 +1,6 @@
 ---
 title: 静态程序构建过程
-key: 10004
+key: 10007
 tags: 编译
 layout: article
 category: blog
