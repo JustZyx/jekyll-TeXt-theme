@@ -109,54 +109,80 @@ don't expire at all, just return an error on write operations
 
 ### 思路
 
+- 涉及到频繁的内存迁移，插入删除操作较多，用链表来维护LRU结构
+- 针对链表查找O(N)的时间复杂度劣势，引入散列表来维护key在链表中的位置
+
+时间复杂度: O(1)
+
 ```c++
-class LRUCache {
-public:
-    int _capacity;
-    unsigned int _size;
-    unordered_map<int, list<pair<int, int>>::iterator> um; //key => node postion
+class LRUCache
+{
+private:
     list<pair<int, int>> l; //node => <key,value>
+    int size; //当前长度
+    int cap; //可容纳的容量
+    unordered_map<int, list<pair<int, int>>::iterator> um; // <key, key在链表中迭代器位置>
 
 public:
     LRUCache(int capacity) {
-        this->_capacity = capacity;
-        this->_size = 0;
+        this->cap = capacity;
+        this->size = 0;
     }
 
     int get(int key) {
-        //查找key所在的位置
-        //返回key的value
-        //找不到
-        auto mapKeyPos = this->um.find(key);
-        if (mapKeyPos == this->um.end()) {
+        auto umPos = this->um.find(key);
+        if (umPos == this->um.end()) {
             return -1;
         }
 
-        //能找到
-        this->l.emplace_front(make_pair(mapKeyPos->second->first, mapKeyPos->second->second)); //插入链表头结点
-        this->l.erase(mapKeyPos->second);
-        this->um[key] = this->l.begin(); //更新散列表位
-        return mapKeyPos->second->second;
+        int value = umPos->second->second;
+
+        this->l.erase(umPos->second);
+        this->l.push_front(make_pair(key, value));
+        this->um.erase(umPos);
+        this->um[key] = this->l.begin();
+
+        return value;
     }
 
     void put(int key, int value) {
-        if (this->_size >= this->_capacity) { //当前长度大于等于容量
-            //删除链表
-            int mapKey = (this->l.rbegin()->first); //要淘汰的key
-            auto mapKeyPos = this->um.find(mapKey);
-            this->um.erase(mapKeyPos); //删除散列表
-            this->l.pop_back(); //删除链表尾结点
-        } else { //当前长度尚未达到最大容量
-            auto mapKeyPos = this->um.find(key);
-            if (mapKeyPos != this->um.end()) { //能找到删除结点
-                this->l.erase(mapKeyPos->second);
+        //先搜索, 如果找到删除
+        //如果没找到, 判断是否size >= cap，如果reached，则删除末尾结点
+        auto umPos = this->um.find(key);
+        if (umPos != this->um.end()) {
+            this->l.erase(umPos->second);
+            this->um.erase(umPos);
+        } else {
+            if (this->size >= this->cap) {
+                this->um.erase(this->l.rbegin()->first);
+                this->l.pop_back();
+            } else {
+                this->size++;
             }
-            this->_size++;
         }
-        this->l.emplace_front(make_pair(key, value)); //插入链表头结点
-        this->um[key] = this->l.begin(); //更新散列表位
+
+        //新值插入头结点且更新在散列表中的位置
+        this->l.push_front(make_pair(key, value));
+        this->um[key] = this->l.begin();
     }
 };
+
+int main()
+{
+    auto cache = new LRUCache(2);
+
+    cout << cache->get(2) << endl;
+    cache->put(2, 6);
+    cout << cache->get(1) << endl;
+    cache->put(1, 5);
+    cache->put(1, 2);
+    cout << cache->get(1) << endl;
+    cout << cache->get(2) << endl;
+
+    return 0;
+}
 ```
 
-无论是set还是put操作，都将所操作的key插入到链表的头节点，并删除对应的原节点，更新在散列表里的位置
+个人觉得这道题并不能算上Medium的难度，写完以后打脸了，这道题并不是难在思路，难在代码量上，我特意用秒表计了个时，标准的50行代码20分钟内白板上bugfree，基于这个背景确实很符合Medium难度。
+
+### Redis LRU的实现
