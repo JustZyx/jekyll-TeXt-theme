@@ -12,9 +12,16 @@ modify_date: 2019-08-31 18:45:00 +08:00
 有序数据结构的合并是个基础操作，在很多算法中有着应用，比如归并排序先分治再归并，其中的归并操作就是合并有序数组的过程，掌握基本功对于后续复杂算法的理解有着非常重要的帮助
 
 ## 题目描述
+
+### easy
+
 - [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)
 - [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
 - [617. Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/)
+
+### hard
+
+- [23. Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/solution/)
 
 ## 思路分析
 ### 合并有序数组
@@ -127,3 +134,45 @@ func mergeTrees(t1 *TreeNode, t2 *TreeNode) *TreeNode {
 }
 ```
 由于不存在重复计算，所以整体性能还可以，比非递归实现更合适
+
+
+### 合并k个排序链表
+
+这道题的核心思想是利用堆来维护链表有序的性质，建堆的平均时间复杂度是O(N)，所以本题的时间复杂度是O(N)，空间复杂度是O(N)。我觉得这道题主要考察两个点：
+
+- 堆的应用
+- while 循环中边界条件的把握，如循环到堆中最后一个元素以及是先pop还是最后pop
+
+由于Golang不支持泛型，且Golang标准库的堆不如C++写起来方便，所以本题用C++实现
+
+```c++
+ListNode* mergeKLists(vector<ListNode*>& lists) {
+    priority_queue<ListNode*, vector<ListNode*>, cmp> pq; //小顶堆
+    for (int i = 0; i < lists.size(); i++) {
+        if (lists[i]) {
+            pq.push(lists[i]);
+        }
+    }
+    if (pq.empty()) {
+        return nullptr;
+    }
+
+    ListNode* ret = pq.top();
+    ListNode* iter = ret; //迭代器
+
+    pq.pop();
+    while (!pq.empty()) {
+        //1.push(iter->next)
+        //2.pop掉头结点
+        //3.iter->next指向当前头结点，此处，头结点有可能不存在
+        //4.iter = iter->next
+        if (iter->next) {
+            pq.push(iter->next);
+        }
+        iter->next = pq.top();
+        iter = iter->next;
+        pq.pop();
+    }
+    return ret;
+}
+```
