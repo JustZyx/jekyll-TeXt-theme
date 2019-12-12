@@ -1,7 +1,7 @@
 ---
 title: 一些基础知识的回顾
 key: 10013
-tags: 面试
+tags: 读书笔记
 layout: article
 category: blog
 comment: true
